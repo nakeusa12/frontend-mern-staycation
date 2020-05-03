@@ -34,15 +34,15 @@ export default function Categories({ data }) {
                         className="img-cover"
                       />
                     </figure>
-                    <div class="meta-wrapper">
+                    <div className="meta-wrapper">
                       <Button
                         type="link"
                         href={`/properties/${item._id}`}
-                        class="stretched-link d-block text-gray-800"
+                        className="stretched-link d-block text-gray-800"
                       >
-                        <h5 class="h4">{item.name}</h5>
+                        <h5 className="h4">{item.name}</h5>
                       </Button>
-                      <span class="text-gray-500">
+                      <span className="text-gray-500">
                         {item.city}, {item.country}
                       </span>
                     </div>
