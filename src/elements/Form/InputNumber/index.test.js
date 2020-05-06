@@ -5,7 +5,7 @@ import InputNumber from "./index";
 
 class TestInput extends React.Component {
   state = {
-    value: "1",
+    value: "",
   };
 
   handleChange = (e) => {
@@ -16,8 +16,6 @@ class TestInput extends React.Component {
     return (
       <InputNumber
         max={30}
-        suffix=" night"
-        isSuffixPlural
         onChange={this.handleChange}
         name="value"
         value={this.state.value}
@@ -39,6 +37,8 @@ test("should able to change value", () => {
   const { input } = setup();
 
   fireEvent.change(input, { target: { value: 23 } });
+  // console.log(input.value);
+
   expect(input.value).toBe("23");
 });
 
@@ -46,5 +46,6 @@ test("should not be to change when reach max value", () => {
   const { input } = setup();
 
   fireEvent.change(input, { target: { value: 33 } });
+  // console.log(input.value);
   expect(input.value).toBe("");
 });
