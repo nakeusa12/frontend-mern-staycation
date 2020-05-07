@@ -4,12 +4,14 @@ import PageDetailTitle from "parts/PageDetailTitle";
 import FeaturedImage from "parts/FeaturedImage";
 import PageDetailDescription from "parts/PageDetailDescription";
 import BookingForm from "parts/BookingForm";
-
+import Categories from "parts/Categories";
+import Testimonial from "parts/Testimonial";
+import Footer from "parts/Footer";
 import ItemDetails from "json/itemDetails.json";
 
 export default class DetailsPage extends Component {
   componentDidMount() {
-    window.title = "Staycation | Details Page";
+    window.title = "Details Page";
     window.scrollTo(0, 0);
   }
 
@@ -34,6 +36,9 @@ export default class DetailsPage extends Component {
             </div>
           </div>
         </section>
+        <Categories data={ItemDetails.categories} />
+        <Testimonial data={ItemDetails.testimonial} />
+        <Footer />
       </>
     );
   }
