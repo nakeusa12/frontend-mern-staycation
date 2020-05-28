@@ -1,0 +1,67 @@
+import React, { useRef } from "react";
+import propTypes from "prop-types";
+
+import "./index.scss";
+
+export default function File(props) {
+  const {
+    value,
+    placeholder,
+    name,
+    accept,
+    prepend,
+    append,
+    outerClassName,
+    inputClassName,
+  } = props;
+
+  const refInputFile = useRef(null);
+
+  return (
+    <div className={["input-text mb-3", outerClassName].join(" ")}>
+      <div class="input-group">
+        {prepend && (
+          <div class="input-group-prepend bg-gray-900">
+            <div class="input-group-text">{prepend}</div>
+          </div>
+        )}
+        <input
+          accept={accept}
+          ref={refInputFile}
+          name={name}
+          className="d-none"
+          type="file"
+          value={value}
+          onChange={props.onChange}
+        />
+        <input
+          onClick={() => refInputFile.current.click()}
+          defaultValue={value}
+          placeholder={placeholder}
+          className={["form-control", inputClassName].join(" ")}
+        />
+        {append && (
+          <div class="input-group-append bg-gray-900">
+            <div class="input-group-text">{append}</div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+File.defaultProps = {
+  placeholder: "Browse a file...",
+};
+
+File.propTypes = {
+  name: propTypes.string.isRequired,
+  accept: propTypes.string.isRequired,
+  value: propTypes.string.isRequired,
+  onChange: propTypes.func.isRequired,
+  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  append: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  placeholder: propTypes.string,
+  outerClassName: propTypes.string,
+  inputClassName: propTypes.string,
+};
