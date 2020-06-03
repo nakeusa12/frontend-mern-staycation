@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-import Header from "parts/Header";
 
+import Header from "parts/Header";
 import Button from "elements/Button";
 import Stepper, {
   Numbering,
   Meta,
   MainContent,
   Controller,
-} from "elements/Stapper";
+} from "elements/Stepper";
 
 import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 
-import ItemDetails from "json/ItemDetails.json";
+import ItemDetails from "json/itemDetails.json";
 
 export default class Checkout extends Component {
   state = {
@@ -86,7 +86,7 @@ export default class Checkout extends Component {
         <Header isCentered />
 
         <Stepper steps={steps}>
-          {(prevStep, nexStep, CurrentStep, steps) => {
+          {(prevStep, nextStep, CurrentStep, steps) => (
             <>
               <Numbering
                 data={steps}
@@ -99,68 +99,64 @@ export default class Checkout extends Component {
               <MainContent data={steps} current={CurrentStep} />
 
               {CurrentStep === "bookingInformation" && (
-                <Fade>
-                  <Controller>
-                    {data.firstName !== "" &&
-                      data.lastName !== "" &&
-                      data.email !== "" &&
-                      data.phone !== "" && (
-                        <Fade>
-                          <Button
-                            className="btn mb-3"
-                            type="button"
-                            isBlock
-                            isPrimary
-                            hasShadow
-                            onClick={nexStep}
-                          >
-                            Continue to Book
-                          </Button>
-                        </Fade>
-                      )}
-                    <Button
-                      className="btn"
-                      type="link"
-                      isBlock
-                      isPrimary
-                      href={`/properties/${ItemDetails._id}`}
-                    >
-                      Cancel
-                    </Button>
-                  </Controller>
-                </Fade>
+                <Controller>
+                  {data.firstName !== "" &&
+                    data.lastName !== "" &&
+                    data.email !== "" &&
+                    data.phone !== "" && (
+                      <Fade>
+                        <Button
+                          className="btn mb-3"
+                          type="button"
+                          isBlock
+                          isPrimary
+                          hasShadow
+                          onClick={nextStep}
+                        >
+                          Continue to Book
+                        </Button>
+                      </Fade>
+                    )}
+                  <Button
+                    className="btn"
+                    type="link"
+                    isBlock
+                    isLight
+                    href={`/properties/${checkout._id}`}
+                  >
+                    Cancel
+                  </Button>
+                </Controller>
               )}
 
               {CurrentStep === "payment" && (
-                <Fade>
-                  <Controller>
-                    {data.proofPayment !== "" &&
-                      data.bankName !== "" &&
-                      data.bankHolder !== "" && (
-                        <Fade>
-                          <Button
-                            className="btn mb-3"
-                            type="button"
-                            isBlock
-                            isPrimary
-                            hasShadow
-                            onClick={nexStep}
-                          >
-                            Continue to Book
-                          </Button>
-                        </Fade>
-                      )}
-                    <Button
-                      className="btn"
-                      type="button"
-                      isBlock
-                      isPrimary
-                      onClick={prevStep}
-                    >
-                      Cancel
-                    </Button>
-                  </Controller>
-                </Fade>
+                <Controller>
+                  {data.proofPayment !== "" &&
+                    data.bankName !== "" &&
+                    data.bankHolder !== "" && (
+                      <Fade>
+                        <Button
+                          className="btn mb-3"
+                          type="button"
+                          isBlock
+                          isPrimary
+                          hasShadow
+                          onClick={() => this._Submit(nextStep)}
+                        >
+                          Continue to Book
+                        </Button>
+                      </Fade>
+                    )}
+                  <Button
+                    className="btn"
+                    type="button"
+                    isBlock
+                    isLight
+                    onClick={prevStep}
+                  >
+                    Cancel
+                  </Button>
+                </Controller>
               )}
 
               {CurrentStep === "completed" && (
@@ -177,8 +173,8 @@ export default class Checkout extends Component {
                   </Button>
                 </Controller>
               )}
-            </>;
-          }}
+            </>
+          )}
         </Stepper>
       </>
     );
