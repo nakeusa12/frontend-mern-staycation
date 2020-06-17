@@ -56,7 +56,7 @@ export default function Text(props) {
           className={["form-control", inputClassName].join(" ")}
           value={value}
           placeholder={placeholder}
-          onChange={onchange}
+          onChange={onChange}
         />
         {append && (
           <div className="input-group-append bg-gray-900">

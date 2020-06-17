@@ -8,7 +8,7 @@ import Stepper, {
   Meta,
   MainContent,
   Controller,
-} from "elements/Stepper";
+} from "elements/Stapper";
 
 import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
