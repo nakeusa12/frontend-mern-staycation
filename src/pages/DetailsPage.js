@@ -14,7 +14,7 @@ import ItemDetails from "json/itemDetails.json";
 
 import { checkoutBooking } from "store/action/checkout";
 
-export default class DetailsPage extends Component {
+export class DetailsPage extends Component {
   componentDidMount() {
     window.title = "Details Page";
     window.scrollTo(0, 0);

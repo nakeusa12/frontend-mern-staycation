@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-
 import Header from "parts/Header";
+
 import Button from "elements/Button";
 import Stepper, {
   Numbering,
   Meta,
   MainContent,
   Controller,
-} from "elements/Stapper";
+} from "elements/Stepper";
 
 import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";

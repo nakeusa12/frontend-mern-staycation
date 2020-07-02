@@ -16,8 +16,8 @@ export default function BookingInformation(props) {
                 <figure className="img-wrapper" style={{ height: 270 }}>
                   <img
                     className="img-cover"
-                    src={`${process.env.REACT_APP_HOST}/${ItemDetails.imageId[0].imageUrl}`}
-                    alt={ItemDetails.title}
+                    src={ItemDetails.imageUrls[0].url}
+                    alt={ItemDetails.name}
                   />
                 </figure>
                 <div className="row align-items-center">

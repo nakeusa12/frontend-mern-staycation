@@ -18,7 +18,7 @@ export default function Text(props) {
 
   const [HasError, setHasError] = useState(null);
   let pattern = "";
-  if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+s/;
+  if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === "tel") pattern = "[0-9]*";
 
   const onChange = (event) => {
@@ -72,7 +72,7 @@ export default function Text(props) {
 Text.defaultProps = {
   type: "text",
   pattern: "",
-  placeholder: "Please type here,,,",
+  placeholder: "Please type here...",
   errorResponse: "Please match the request format.",
 };
 

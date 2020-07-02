@@ -3,12 +3,13 @@
 $stepperMainColor: $gray-200;
 $size: 50px;
 
-ol.stapper {
+ol.stepper {
   display: flex;
   align-items: center;
-  justify-content: centerc;
+  justify-content: center;
   margin: 0;
   padding: 0;
+
   li {
     position: relative;
     display: flex;
