@@ -3,6 +3,8 @@ import Fade from "react-reveal/Fade";
 import Button from "elements/Button";
 
 export default function Categories({ data }) {
+  console.log(data);
+
   return data.map((category, index1) => {
     if (category.itemId.length === 0) return null;
     return (
@@ -31,7 +33,7 @@ export default function Categories({ data }) {
                               ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
                               : ""
                           }
-                          alt={item.name}
+                          alt={item.title}
                           className="img-cover"
                         />
                       </figure>
@@ -41,7 +43,7 @@ export default function Categories({ data }) {
                           href={`/properties/${item._id}`}
                           className="stretched-link d-block text-gray-800"
                         >
-                          <h5 className="h4">{item.name}</h5>
+                          <h5 className="h4">{item.title}</h5>
                         </Button>
                         <span className="text-gray-500">
                           {item.city}, {item.country}
