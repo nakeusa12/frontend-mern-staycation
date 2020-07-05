@@ -19,10 +19,10 @@ export default function File(props) {
 
   return (
     <div className={["input-text mb-3", outerClassName].join(" ")}>
-      <div class="input-group">
+      <div className="input-group">
         {prepend && (
-          <div class="input-group-prepend bg-gray-900">
-            <div class="input-group-text">{prepend}</div>
+          <div className="input-group-prepend bg-gray-900">
+            <div className="input-group-text">{prepend}</div>
           </div>
         )}
         <input
@@ -41,8 +41,8 @@ export default function File(props) {
           className={["form-control", inputClassName].join(" ")}
         />
         {append && (
-          <div class="input-group-append bg-gray-900">
-            <div class="input-group-text">{append}</div>
+          <div className="input-group-append bg-gray-900">
+            <div className="input-group-text">{append}</div>
           </div>
         )}
       </div>
