@@ -17,6 +17,7 @@ export default function File(props) {
   } = props;
 
   const refInputFile = useRef(null);
+
   const onChange = (event) => {
     setFileName(event.target.value);
     props.onChange({
