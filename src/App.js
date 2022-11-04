@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 8000);
   }, {});
 
   return (
@@ -34,7 +34,10 @@ function App() {
             justifyContent: "center",
           }}
         >
-          <img src={Dual} alt="Loading" />
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: "center"}}>
+            <img src={Dual} alt="Loading" />
+            <span>Page Loading...</span>
+          </div>
         </div>
       )}
       <Router>
