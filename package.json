@@ -21,6 +21,9 @@
     "redux-thunk": "^2.3.0",
     "sass": "^1.55.0"
   },
+  "engines": {
+    "node": "16.15.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
