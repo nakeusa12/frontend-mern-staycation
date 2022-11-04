@@ -72,7 +72,6 @@ export class Checkout extends Component {
     const { data } = this.state;
 
     const { checkout, page } = this.props;
-    // console.log(page, data);
 
     if (!checkout)
       return (

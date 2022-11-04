@@ -7,11 +7,11 @@ export default function PageDetailTitle({ data, breadcrumb }) {
   return (
     <section className="container spacing-sm">
       <Fade bottom>
-        <div className="row align-items-center">
+        <div className="align-items-center">
           <div className="col">
             <Breadcrumb data={breadcrumb} />
           </div>
-          <div className="col-auto text-center">
+          <div className="col-auto text-center mt-2">
             <h1 className="h2">{data.title}</h1>
             <span className="text-gray-400">
               {data.city}, {data.country}
