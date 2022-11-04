@@ -6,10 +6,10 @@ import "assets/scss/style.scss";
 // import DetailsPage from "pages/DetailsPage";
 // import Checkout from "pages/Checkout";
 import Example from "pages/Example";
+import Dual from "assets/images/dual-ball.gif";
 const LandingPage = React.lazy(() => import("pages/LandingPage"));
 const DetailsPage = React.lazy(() => import("pages/DetailsPage"));
 const Checkout = React.lazy(() => import("pages/Checkout"));
-import Dual from "assets/images/dual-ball.gif";
 
 function App() {
   const [loading, setLoading] = useState(true);
