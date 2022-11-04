@@ -2,9 +2,6 @@ import React, { Suspense, useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "assets/scss/style.scss";
-// import LandingPage from "pages/LandingPage";
-// import DetailsPage from "pages/DetailsPage";
-// import Checkout from "pages/Checkout";
 import Example from "pages/Example";
 import Dual from "assets/images/dual-ball.gif";
 const LandingPage = React.lazy(() => import("pages/LandingPage"));
@@ -18,11 +15,12 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 7000);
-  }, {});
+  }, [loading]);
+
 
   return (
     <div className="App">
-      {loading && (
+      {loading && window.location.pathname === "/" && (
         <div
           className="fixed-top flex"
           style={{
