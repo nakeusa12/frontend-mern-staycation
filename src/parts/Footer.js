@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="col-auto" style={{ width: 350 }}>
             <IconText />
             <p className="brand-tagline">
-              We kaboom your beauty holiday instantly and memorable.
+            We are the fastest and best hotel booking provider. choose us then you will be special.
             </p>
           </div>
           <div className="col-auto mr-5">
@@ -71,7 +71,7 @@ export default function Footer() {
                 </Button>
               </li>
               <li className="list-group-item">
-                <span>Staycation, Kemang, Jakarta</span>>
+                <span>Staycation, Kemang, Jakarta</span>
               </li>
             </ul>
           </div>

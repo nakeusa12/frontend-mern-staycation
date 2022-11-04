@@ -1,6 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
-import ImageHero from "assets/images/img-hero.jpg";
+import ImageHero from "assets/images/img-hero2.jpg";
 import ImageHero_ from "assets/images/frame-img-hero.jpg";
 import IconCities from "assets/images/icons/icon_cities.svg";
 import IconTraveler from "assets/images/icons/icon_traveler.svg";
@@ -88,12 +88,12 @@ export default function Hero(props) {
           </div>
 
           <div className="col-6 pl-5">
-            <div style={{ width: 520, height: 410 }}>
+            <div style={{ width: 520, height: 410, overflow: 'hidden' }}>
               <img
                 src={ImageHero}
                 alt="Room with couches"
                 className="img-fluid position-absolute"
-                style={{ margin: "-30px 0 0 -30px", zIndex: 1 }}
+                style={{ margin: "-30px 0 0 -30px", zIndex: 1}}
               />
               <img
                 src={ImageHero_}
